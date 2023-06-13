@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 import './Products.css'
 import fectchProducts from '../../api/fectchProduct'
+import ProductsCard from '../ProductsCard/ProductsCard'
 
 
 function Products() {
@@ -22,9 +23,14 @@ function Products() {
 
   return (
     <section className="products containe">
+
       {
-        products.map((product) => <p key={product.title}>{product.title} </p>)
+        products.map((product) => <ProductsCard key={product.id} data = {product}/>
+        )
       }
+
+
+
     </section>
   )
 }
